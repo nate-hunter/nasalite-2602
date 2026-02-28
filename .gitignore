@@ -47,6 +47,4 @@ next-env.d.ts
 .vscode
 
 # local dev specific
-__*.ts
-__*.tsx
-__*.css
+__*
