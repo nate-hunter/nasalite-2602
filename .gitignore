@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# cursor
+.cursor
+
+# vscode
+.vscode
+
+# local dev specific
+__*
