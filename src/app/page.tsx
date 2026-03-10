@@ -8,7 +8,7 @@ export default function Home() {
 				<div className={styles.hero}>
 					<h1 className={styles.wordmark}>The Hunter's</h1>
 					<p className={styles.tagline}>Our wedding memories</p>
-					<Link href="/wedding" className={styles.cta}>
+					<Link href="/galleries/wedding" className={styles.cta}>
 						View galleries
 					</Link>
 				</div>
