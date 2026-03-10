@@ -1,0 +1,243 @@
+/**
+ * Navbar — Swiss + minimal + Nordic.
+ * Inspired by reference image: brand left, nav center, auth right.
+ */
+
+.root {
+	border-bottom: 1px solid var(--color-border);
+	background-color: var(--color-surface);
+}
+
+.inner {
+	/* max-width: var(--layout-max-width); */
+	/* background-color: pink; */
+	margin-inline: auto;
+	padding-inline: var(--layout-gutter);
+	padding-block: var(--sp-4);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--sp-8);
+	flex-wrap: wrap;
+}
+
+.brand {
+	font-family: var(--font-playfair), ui-serif, Georgia, serif;
+	font-size: var(--font-brand-label);
+	font-weight: var(--weight-extrabold);
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--color-font);
+	white-space: nowrap;
+}
+/* .navBrand {
+	font-family: var(--font-playfair), ui-serif, Georgia, serif;
+	font-size: var(--font-brand-label);
+	font-weight: var(--weight-extrabold);
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--color-font);
+	white-space: nowrap;
+} */
+.navBrand {
+	--font-size-nav-brand: clamp(1.25rem, 1.875vw + 0.75rem, 1.5rem);
+	--font-line-height-nav-brand: 1.5;
+	--font-weight-nav-brand: 800;
+	width: max-content;
+	font-family: var(--font-playfair);
+	font-size: var(--font-size-nav-brand);
+	line-height: var(--font-line-height-nav-brand);
+	font-weight: var(--font-weight-nav-brand);
+	color: var(--color-font);
+	text-decoration: none;
+	min-width: fit-content;
+	letter-spacing: -0.025em;
+	transition: color 0.2s ease;
+	text-transform: uppercase;
+
+	/* background-color: salmon; */
+}
+
+.brand a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.nav {
+	flex: 1 1 auto;
+	display: flex;
+	justify-content: flex-start;
+
+	/* background-color: pink; */
+}
+
+.navOpen {
+	display: flex;
+}
+
+.navCollapsed {
+	display: none;
+}
+
+.navLinks {
+	display: flex;
+	list-style: none;
+	gap: var(--sp-7);
+	padding: 0;
+	margin: 0;
+}
+
+.navLink {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-family: var(--font-gothic), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-nav-link);
+	font-weight: var(--weight-normal);
+	text-transform: uppercase;
+	letter-spacing: 0.16em;
+	color: var(--color-font-muted);
+	text-decoration: none;
+	padding-block: var(--sp-1);
+}
+
+.navLink::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -0.15rem;
+	height: 1px;
+	background-color: transparent;
+}
+
+.navLink:hover {
+	color: var(--color-font);
+}
+
+.navLinkActive {
+	font-family: var(--font-gothic), ui-serif, Georgia, serif;
+	font-weight: var(--weight-semibold);
+	color: var(--color-primary);
+}
+
+.navLinkActive::after {
+	background-color: var(--color-primary);
+}
+
+.auth {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	min-width: max-content;
+}
+
+.signin {
+	font-family: var(--font-gothic), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-subtext);
+	font-weight: var(--weight-normal);
+	text-transform: uppercase;
+	letter-spacing: 0.16em;
+	color: var(--color-font-muted);
+	text-decoration: none;
+}
+
+.signin:hover {
+	color: var(--color-font);
+}
+
+.userEmail {
+	font-family: var(--font-gothic), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-subtext);
+	font-weight: var(--weight-bold);
+	text-transform: uppercase;
+	letter-spacing: 0.16em;
+	color: var(--color-tertiary);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 12rem;
+}
+
+.menuButton {
+	display: none;
+	border: 0;
+	padding: var(--sp-3);
+	background: transparent;
+	cursor: pointer;
+}
+
+.menuIcon {
+	position: relative;
+	display: block;
+	width: 1.5rem;
+	height: 0.125rem;
+	border-radius: 999px;
+	background-color: var(--color-secondary-800);
+}
+
+.menuIcon::before,
+.menuIcon::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 0.125rem;
+	border-radius: 999px;
+	background-color: var(--color-secondary-800);
+}
+
+.menuIcon::before {
+	top: -0.35rem;
+}
+
+.menuIcon::after {
+	top: 0.35rem;
+}
+
+@media (min-width: 48rem) {
+	.inner {
+		flex-wrap: nowrap;
+	}
+
+	.menuButton {
+		display: none;
+	}
+
+	.nav {
+		display: flex;
+	}
+
+	.auth {
+		min-width: max-content;
+	}
+}
+
+@media (max-width: 47.99rem) {
+	.inner {
+		row-gap: var(--sp-3);
+	}
+
+	.nav {
+		order: 3;
+		width: 100%;
+		justify-content: center;
+	}
+
+	.menuButton {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		margin-left: auto;
+	}
+
+	.navLinks {
+		justify-content: center;
+		gap: var(--sp-5);
+	}
+
+	.auth {
+		order: 2;
+		min-width: auto;
+	}
+}
