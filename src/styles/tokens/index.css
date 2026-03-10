@@ -1,0 +1,13 @@
+/**
+ * Design tokens — single entry point.
+ * Order matters: spacing before borders (borders use --sp-*), colors first.
+ * Source: __docs/refs/design/design-system.md
+ */
+
+@import './colors.css';
+@import './spacing.css';
+@import './typography.css';
+@import './borders.css';
+@import './layout.css';
+@import './motion.css';
+@import './z-index.css';
