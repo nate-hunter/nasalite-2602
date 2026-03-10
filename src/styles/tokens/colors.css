@@ -4,118 +4,123 @@
  */
 
 :root {
-  /* Primary — warm gold; key CTAs and brand moments */
-  --color-primary: #e8c184;
-  --color-primary-950: #1b0800;
-  --color-primary-900: #311900;
-  --color-primary-800: #492c00;
-  --color-primary-700: #604100;
-  --color-primary-600: #785719;
-  --color-primary-500: #916e33;
-  --color-primary-400: #a9864c;
-  --color-primary-300: #c29e67;
-  --color-primary-200: #dab883;
-  --color-primary-100: #f3d2a0;
-  --color-primary-50: #ffedbf;
+	/* Primary — warm gold; key CTAs and brand moments */
+	--color-primary: #e8c184;
+	--color-primary-950: #1b0800;
+	--color-primary-900: #311900;
+	--color-primary-800: #492c00;
+	--color-primary-700: #604100;
+	--color-primary-600: #785719;
+	--color-primary-500: #916e33;
+	--color-primary-400: #a9864c;
+	--color-primary-300: #c29e67;
+	--color-primary-200: #dab883;
+	--color-primary-100: #f3d2a0;
+	--color-primary-50: #ffedbf;
 
-  /* Secondary — neutral gray; default text and borders */
-  --color-secondary: #333333;
-  --color-secondary-950: #0d0d0d;
-  --color-secondary-900: #1f1f1f;
-  --color-secondary-800: #333333;
-  --color-secondary-700: #484848;
-  --color-secondary-600: #5d5d5d;
-  --color-secondary-500: #747474;
-  --color-secondary-400: #8c8c8c;
-  --color-secondary-300: #a4a4a4;
-  --color-secondary-200: #bebebe;
-  --color-secondary-100: #d7d7d7;
-  --color-secondary-50: #f2f2f2;
+	/* Secondary — neutral gray; default text and borders */
+	--color-secondary: #333333;
+	--color-secondary-950: #0d0d0d;
+	--color-secondary-900: #1f1f1f;
+	--color-secondary-800: #333333;
+	--color-secondary-700: #484848;
+	--color-secondary-600: #5d5d5d;
+	--color-secondary-500: #747474;
+	--color-secondary-400: #8c8c8c;
+	--color-secondary-300: #a4a4a4;
+	--color-secondary-200: #bebebe;
+	--color-secondary-100: #d7d7d7;
+	--color-secondary-50: #f2f2f2;
 
-  /* Tertiary — purple; use sparingly */
-  --color-tertiary: #9681ff;
-  --color-tertiary-950: #12003d;
-  --color-tertiary-900: #23005e;
-  --color-tertiary-800: #36127e;
-  --color-tertiary-700: #492b9c;
-  --color-tertiary-600: #5e43b8;
-  --color-tertiary-500: #735cd4;
-  --color-tertiary-400: #8a76ee;
-  --color-tertiary-300: #a290ff;
-  --color-tertiary-200: #baabff;
-  --color-tertiary-100: #d3c7ff;
-  --color-tertiary-50: #eee3ff;
+	/* Tertiary — purple; use sparingly */
+	--color-tertiary: #9681ff;
+	--color-tertiary-950: #12003d;
+	--color-tertiary-900: #23005e;
+	--color-tertiary-800: #36127e;
+	--color-tertiary-700: #492b9c;
+	--color-tertiary-600: #5e43b8;
+	--color-tertiary-500: #735cd4;
+	--color-tertiary-400: #8a76ee;
+	--color-tertiary-300: #a290ff;
+	--color-tertiary-200: #baabff;
+	--color-tertiary-100: #d3c7ff;
+	--color-tertiary-50: #eee3ff;
 
-  /* Surface — cream; primary background */
-  --color-surface: #fffaf0;
-  --color-surface-950: #0f0d08;
-  --color-surface-900: #221f19;
-  --color-surface-800: #36322b;
-  --color-surface-700: #4b473f;
-  --color-surface-600: #615d55;
-  --color-surface-500: #78746b;
-  --color-surface-400: #908c83;
-  --color-surface-300: #a8a49b;
-  --color-surface-200: #c1bdb5;
-  --color-surface-100: #dbd7cf;
-  --color-surface-50: #f5f1ea;
+	/* Surface — cream; primary background */
+	--color-surface: #fffaf0;
+	--color-surface-950: #0f0d08;
+	--color-surface-900: #221f19;
+	--color-surface-800: #36322b;
+	--color-surface-700: #4b473f;
+	--color-surface-600: #615d55;
+	--color-surface-500: #78746b;
+	--color-surface-400: #908c83;
+	--color-surface-300: #a8a49b;
+	--color-surface-200: #c1bdb5;
+	--color-surface-100: #dbd7cf;
+	--color-surface-50: #f5f1ea;
+	--color-surface-0: #ffffff;
 
-  /* Semantic — feedback and system states only */
-  --color-info: #0166ff;
-  --color-info-950: #030052;
-  --color-info-900: #000079;
-  --color-info-800: #000e9d;
-  --color-info-700: #002fbf;
-  --color-info-600: #004ade;
-  --color-info-500: #0566fb;
-  --color-info-400: #2c81ff;
-  --color-info-300: #4b9dff;
-  --color-info-200: #69b9ff;
-  --color-info-100: #89d5ff;
-  --color-info-50: #abf1ff;
+	/* Semantic — feedback and system states only */
+	--color-info: #0166ff;
+	--color-info-950: #030052;
+	--color-info-900: #000079;
+	--color-info-800: #000e9d;
+	--color-info-700: #002fbf;
+	--color-info-600: #004ade;
+	--color-info-500: #0566fb;
+	--color-info-400: #2c81ff;
+	--color-info-300: #4b9dff;
+	--color-info-200: #69b9ff;
+	--color-info-100: #89d5ff;
+	--color-info-50: #abf1ff;
 
-  --color-success: #50c371;
-  --color-success-950: #001700;
-  --color-success-900: #002d00;
-  --color-success-800: #004400;
-  --color-success-700: #005c10;
-  --color-success-600: #007428;
-  --color-success-500: #008c3f;
-  --color-success-400: #33a558;
-  --color-success-300: #55be72;
-  --color-success-200: #75d78d;
-  --color-success-100: #96f0aa;
-  --color-success-50: #b7ffc8;
+	--color-success: #50c371;
+	--color-success-950: #001700;
+	--color-success-900: #002d00;
+	--color-success-800: #004400;
+	--color-success-700: #005c10;
+	--color-success-600: #007428;
+	--color-success-500: #008c3f;
+	--color-success-400: #33a558;
+	--color-success-300: #55be72;
+	--color-success-200: #75d78d;
+	--color-success-100: #96f0aa;
+	--color-success-50: #b7ffc8;
 
-  --color-warning: #ffc105;
-  --color-warning-950: #220100;
-  --color-warning-900: #3c1000;
-  --color-warning-800: #552400;
-  --color-warning-700: #6f3900;
-  --color-warning-600: #885000;
-  --color-warning-500: #a16800;
-  --color-warning-400: #ba8100;
-  --color-warning-300: #d29a00;
-  --color-warning-200: #ebb52c;
-  --color-warning-100: #ffd05d;
-  --color-warning-50: #ffeb87;
+	--color-warning: #ffc105;
+	--color-warning-950: #220100;
+	--color-warning-900: #3c1000;
+	--color-warning-800: #552400;
+	--color-warning-700: #6f3900;
+	--color-warning-600: #885000;
+	--color-warning-500: #a16800;
+	--color-warning-400: #ba8100;
+	--color-warning-300: #d29a00;
+	--color-warning-200: #ebb52c;
+	--color-warning-100: #ffd05d;
+	--color-warning-50: #ffeb87;
 
-  --color-danger: #dc3848;
-  --color-danger-950: #340000;
-  --color-danger-900: #550000;
-  --color-danger-800: #740000;
-  --color-danger-700: #930014;
-  --color-danger-600: #b10029;
-  --color-danger-500: #ce2d3f;
-  --color-danger-400: #ea4d57;
-  --color-danger-300: #ff6b71;
-  --color-danger-200: #ff898c;
-  --color-danger-100: #ffa8a8;
-  --color-danger-50: #ffc8c7;
+	--color-danger: #dc3848;
+	--color-danger-950: #340000;
+	--color-danger-900: #550000;
+	--color-danger-800: #740000;
+	--color-danger-700: #930014;
+	--color-danger-600: #b10029;
+	--color-danger-500: #ce2d3f;
+	--color-danger-400: #ea4d57;
+	--color-danger-300: #ff6b71;
+	--color-danger-200: #ff898c;
+	--color-danger-100: #ffa8a8;
+	--color-danger-50: #ffc8c7;
 
-  /* Derived aliases */
-  --color-border: var(--color-surface-200);
-  --color-font: var(--color-secondary-900);
-  --color-font-muted: var(--color-secondary-600);
-  --color-font-inverse: var(--color-surface-50);
+	/* Derived aliases */
+	--color-border: var(--color-surface-200);
+	--color-font: var(--color-secondary-900);
+	--color-font-muted: var(--color-secondary-600);
+	--color-font-inverse: var(--color-surface-50);
+
+	/* Cards and form surfaces (design system §8) */
+	--color-card: var(--color-surface-0);
+	--color-input-background: var(--color-surface-0);
 }
