@@ -1,0 +1,89 @@
+/**
+ * Button component — design system §6.
+ * Global styles for reusable .nl-btn. Variants: .primary, .secondary, .ghost, .danger, .disabled.
+ * Uses tokens from src/styles/tokens (colors, spacing, borders, motion, typography).
+ */
+
+/* Base: shared layout and transitions */
+.nl-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: var(--sp-4);
+  padding: var(--sp-5) var(--sp-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  font-weight: var(--weight-extrabold, 800);
+  font-size: var(--font-btn, 0.875rem);
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    color var(--duration-normal, 0.25s) var(--ease-default, ease-in-out),
+    background-color var(--duration-normal, 0.25s) var(--ease-default, ease-in-out),
+    border-color var(--duration-normal, 0.25s) var(--ease-default, ease-in-out);
+}
+
+/* Focus — design system §8 Accessibility */
+.nl-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Primary — main CTA; fill primary */
+.nl-btn.primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-primary-950);
+}
+.nl-btn.primary:hover:not(:disabled) {
+  background-color: var(--color-primary-300);
+  border-color: var(--color-primary-300);
+  color: var(--color-primary-950);
+}
+
+/* Secondary — outline or subtle fill */
+.nl-btn.secondary {
+  background-color: transparent;
+  border-color: var(--color-border);
+  color: var(--color-font);
+}
+.nl-btn.secondary:hover:not(:disabled) {
+  background-color: var(--color-surface-200);
+  border-color: var(--color-secondary-300);
+}
+
+/* Ghost — no border, transparent; hover shows subtle background */
+.nl-btn.ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-font);
+}
+.nl-btn.ghost:hover:not(:disabled) {
+  background-color: var(--color-surface-200);
+}
+
+/* Danger — destructive actions only */
+.nl-btn.danger {
+  background-color: var(--color-danger);
+  border-color: var(--color-danger);
+  color: var(--color-danger-50);
+}
+.nl-btn.danger:hover:not(:disabled) {
+  background-color: var(--color-danger-600);
+  border-color: var(--color-danger-600);
+}
+
+/* Disabled — muted label, no pointer, reduced opacity */
+.nl-btn.disabled,
+.nl-btn:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  color: var(--color-font-muted);
+  background-color: var(--color-surface-200);
+  border-color: var(--color-border);
+  cursor: not-allowed;
+}

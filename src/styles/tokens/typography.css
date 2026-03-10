@@ -1,0 +1,35 @@
+/**
+ * Typography tokens — design system §3.
+ * Font families: --font-playfair (hero/display), --font-dm-sans (headings/buttons), --font-gothic (body/nav/everything else), --font-sono (mono).
+ * These tokens are sizes, weights, and line heights.
+ * Source: __docs/refs/design/design-system.md
+ */
+
+:root {
+	/* Type scale (sizes) */
+	--font-hero: clamp(3rem, 8vw, 5.5rem);
+	--font-display: clamp(2.5rem, 5vw, 4rem);
+	--font-title: clamp(1.75rem, 3vw, 2.25rem);
+	--font-heading: clamp(1.25rem, 2vw, 1.5rem);
+	--font-body: 1rem;
+	--font-subtext: 0.9375rem;
+	--font-caption: 0.8125rem;
+	--font-brand-label: clamp(1rem, 2vw, 1.25rem);
+	--font-small: 0.75rem;
+	--font-btn: 0.875rem;
+	--font-nav-link: clamp(0.875rem, 1.35vw + 0.5rem, 1.125rem);
+
+	/* Weights */
+	--weight-light: 300;
+	--weight-normal: 400;
+	--weight-medium: 500;
+	--weight-semibold: 600;
+	--weight-bold: 700;
+	--weight-extrabold: 800;
+
+	/* Line height */
+	--leading-tight: 1.2;
+	--leading-snug: 1.375;
+	--leading-normal: 1.5;
+	--leading-relaxed: 1.618;
+}

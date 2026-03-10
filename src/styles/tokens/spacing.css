@@ -1,0 +1,20 @@
+/**
+ * Spacing scale (golden ratio φ ≈ 1.618) — design system §1.
+ * Base 1rem at --sp-6. Use for margin, padding, gap.
+ * Source: __docs/refs/design/design-system.md
+ */
+
+:root {
+	--sp-0: 0rem;
+	--sp-1: 0.09rem;
+	--sp-2: 0.146rem;
+	--sp-3: 0.236rem;
+	--sp-4: 0.382rem;
+	--sp-5: 0.618rem;
+	--sp-6: 1rem;
+	--sp-7: 1.618rem;
+	--sp-8: 2.618rem;
+	--sp-9: 4.236rem;
+	--sp-10: 6.854rem;
+	--sp-11: 11.089rem;
+}

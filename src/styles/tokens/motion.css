@@ -1,0 +1,11 @@
+/**
+ * Motion tokens — design system §5b.
+ * Source: __docs/refs/design/design-system.md
+ */
+
+:root {
+	--duration-fast: 0.15s;
+	--duration-normal: 0.25s;
+	--duration-slow: 0.35s;
+	--ease-default: ease-in-out;
+}

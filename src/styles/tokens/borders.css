@@ -1,0 +1,15 @@
+/**
+ * Border radius (tied to spacing scale) — design system §4.
+ * Source: __docs/refs/design/design-system.md
+ */
+
+:root {
+	--radius-xs: var(--sp-2);
+	--radius-sm: var(--sp-3);
+	--radius-md: var(--sp-4);
+	--radius-lg: var(--sp-5);
+	--radius-xl: var(--sp-6);
+	--radius-2xl: var(--sp-7);
+	--radius-3xl: var(--sp-8);
+	--radius-4xl: var(--sp-9);
+}

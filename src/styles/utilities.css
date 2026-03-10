@@ -1,0 +1,30 @@
+/**
+ * Utility classes from design system §3 (font stacks) and common patterns.
+ * Gothic A1 = body, nav, captions (everything else). DM Sans = headings, buttons.
+ * Playfair = hero, display. Sono = mono.
+ */
+
+.font-sans {
+	font-family: var(--font-gothic), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-serif {
+	font-family: var(--font-playfair), ui-serif, Georgia, serif;
+}
+
+.font-mono {
+	font-family: var(--font-sono), monospace;
+}
+
+/* Headings + buttons — DM Sans */
+.font-heading {
+	font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Container — layout max-width + gutter */
+.container {
+	width: 100%;
+	max-width: var(--layout-max-width);
+	margin-inline: auto;
+	padding-inline: var(--layout-gutter);
+}

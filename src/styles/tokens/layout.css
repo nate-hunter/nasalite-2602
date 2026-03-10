@@ -1,0 +1,16 @@
+/**
+ * Layout and breakpoints — design system §5.
+ * Source: __docs/refs/design/design-system.md
+ */
+
+:root {
+	--layout-max-width: 72rem;
+	--layout-gutter: var(--sp-8);
+	--layout-grid-gap: var(--sp-8);
+
+	/* Breakpoints (use in media queries: min-width) */
+	--bp-sm: 36rem;
+	--bp-md: 48rem;
+	--bp-lg: 64rem;
+	--bp-xl: 72rem;
+}
