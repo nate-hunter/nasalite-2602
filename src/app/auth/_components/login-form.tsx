@@ -1,6 +1,7 @@
 'use client';
 
-import { useActionState } from 'react';
+import { useEffect, useActionState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/ui/Button';
 import { loginuserwithemailpassword, type AuthFormState } from '../auth.actions';
 import styles from '../page.module.css';
@@ -12,11 +13,18 @@ export type UserLoginFormProps = {
 };
 
 export function UserLoginForm({ className }: UserLoginFormProps) {
-	const [state, formAction, pending] = useActionState(loginuserwithemailpassword, initialState);
+	const [state, formaction, pending] = useActionState(loginuserwithemailpassword, initialState);
+	const router = useRouter();
+
+	useEffect(() => {
+		if (state?.success === true) {
+			router.push('/');
+		}
+	}, [state, router]);
 
 	return (
 		<form
-			action={formAction}
+			action={formaction}
 			noValidate
 			aria-label="Login form"
 			className={[styles.form, className].filter(Boolean).join(' ')}
