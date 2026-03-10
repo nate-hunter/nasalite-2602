@@ -131,6 +131,7 @@
 	align-items: center;
 	justify-content: flex-end;
 	min-width: max-content;
+	gap: var(--sp-6);
 }
 
 .signin {
@@ -157,6 +158,23 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	max-width: 12rem;
+}
+
+.logoutBtn {
+	font-family: var(--font-gothic), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-subtext);
+	font-weight: var(--weight-normal);
+	text-transform: uppercase;
+	letter-spacing: 0.16em;
+	color: var(--color-font-muted);
+	text-decoration: none;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.logoutBtn:hover {
+	color: var(--color-font);
 }
 
 .menuButton {

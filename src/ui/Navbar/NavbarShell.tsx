@@ -74,9 +74,16 @@ export function Navbarshell({ pathname, isnavopen, onmenutoggle, user }: Navbars
 
 				<div className={styles.auth}>
 					{user?.email ? (
-						<span className={styles.userEmail} title={user.email}>
-							{user.email}
-						</span>
+						<>
+							<span className={styles.userEmail} title={user.email}>
+								{user.email}
+							</span>
+							<form action="/api/auth/logout" method="post">
+								<button type="submit" className={styles.logoutBtn}>
+									Logout
+								</button>
+							</form>
+						</>
 					) : (
 						<Link href="/auth" className={styles.signin}>
 							Sign in
