@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Login - Email | N+L</title>
+	</head>
+	<body>
+		<h2>Magic Link</h2>
+		<p>Click the below link to login to <span>nateandlisa.com</span></p>
+		<p>
+			<a href="{{ .SiteURL }}/api/auth/confirm?token_hash={{ .TokenHash }}&type=email">Log In</a>
+		</p>
+	</body>
+</html>
