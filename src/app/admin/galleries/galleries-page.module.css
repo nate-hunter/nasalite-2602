@@ -1,0 +1,325 @@
+/**
+ * Admin galleries tab — create form + list.
+ * Page shell and shared header live in admin-layout.module.css.
+ * Uses design tokens from src/styles/tokens.
+ */
+
+.section {
+	display: flex;
+	flex-direction: column;
+	row-gap: var(--sp-5);
+	margin-bottom: var(--sp-8);
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-4);
+	max-width: 28rem;
+}
+
+.formRow {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-2);
+}
+
+.label {
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-caption);
+	font-weight: var(--weight-medium);
+	color: var(--color-font);
+}
+
+.input,
+.textarea {
+	padding: var(--sp-3) var(--sp-4);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-sm);
+	background-color: var(--color-input-background);
+	font-size: var(--font-body);
+	font-family: inherit;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.input:focus-visible,
+.textarea:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+	border-color: var(--color-primary);
+}
+
+.textarea {
+	resize: vertical;
+	min-height: 4rem;
+}
+
+.checkboxLabel {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-3);
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-body);
+	color: var(--color-font);
+	cursor: pointer;
+}
+
+.checkbox {
+	width: 1.125rem;
+	height: 1.125rem;
+}
+
+.submit {
+	align-self: flex-start;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 2.75rem; /* WCAG 2.5.5 — 44px touch target */
+	padding: var(--sp-5) var(--sp-6);
+	border: 1px solid var(--color-primary);
+	border-radius: var(--radius-sm);
+	background-color: var(--color-primary);
+	color: var(--color-primary-950);
+	font-family: var(--font-thicccboi), ui-sans-serif, system-ui, sans-serif;
+	font-weight: var(--weight-extrabold);
+	font-size: var(--font-btn);
+	line-height: 1.15;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition:
+		background-color var(--duration-normal) var(--ease-default),
+		border-color var(--duration-normal) var(--ease-default),
+		opacity var(--duration-normal) var(--ease-default);
+}
+
+.submit:hover:not(:disabled) {
+	background-color: var(--color-primary-300);
+	border-color: var(--color-primary-300);
+}
+
+.submit:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+.submit:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.messageError {
+	font-size: var(--font-caption);
+	color: var(--color-danger-700);
+}
+
+.messageSuccess {
+	font-size: var(--font-caption);
+	color: var(--color-font-muted);
+}
+
+.empty {
+	font-size: var(--font-body);
+	color: var(--color-font-muted);
+}
+
+/* ─── Gallery grid ────────────────────────────────────────────────────────── */
+
+.galleryGrid {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--sp-6);
+}
+
+@media (min-width: 36rem) {
+	.galleryGrid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 64rem) {
+	.galleryGrid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* ─── Gallery card ────────────────────────────────────────────────────────── */
+
+.card {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-md);
+	overflow: hidden;
+	background-color: var(--color-surface);
+	transition: border-color var(--duration-normal) var(--ease-default);
+}
+
+.card:focus-within {
+	border-color: var(--color-primary);
+}
+
+/* Navigation zone — cover image + title + badges */
+.cardLink {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	text-decoration: none;
+	color: inherit;
+}
+
+.cardLink:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: -2px;
+}
+
+/* 1:1 cover image */
+.cover {
+	aspect-ratio: 1 / 1;
+	background-color: var(--color-surface-100);
+	overflow: hidden;
+}
+
+.coverImage {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.coverPlaceholder {
+	width: 100%;
+	height: 100%;
+	background-color: var(--color-surface-100);
+}
+
+/* Card body — title + status */
+.cardBody {
+	padding: var(--sp-5);
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-3);
+}
+
+.cardTitle {
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-body);
+	font-weight: var(--weight-semibold);
+	line-height: var(--leading-snug);
+	color: var(--color-font);
+}
+
+.cardMeta {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-3);
+	flex-wrap: wrap;
+}
+
+/* Status badges */
+.badge {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--sp-2) var(--sp-4);
+	border-radius: var(--radius-lg);
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-small);
+	font-weight: var(--weight-medium);
+	line-height: 1;
+}
+
+.badgeLive {
+	background-color: var(--color-success-50);
+	color: var(--color-success-700);
+}
+
+.badgePublic {
+	background-color: var(--color-primary-50);
+	color: var(--color-primary-700);
+}
+
+.badgePrivate {
+	background-color: var(--color-surface-100);
+	color: var(--color-font-muted);
+}
+
+.assignmentPill {
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-small);
+	color: var(--color-font-muted);
+}
+
+/* ─── Card footer — is_public toggle ─────────────────────────────────────── */
+
+.cardFooter {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--sp-4) var(--sp-5);
+	border-top: 1px solid var(--color-border);
+	background-color: var(--color-surface-50);
+}
+
+.toggleLabel {
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-small);
+	color: var(--color-font-muted);
+}
+
+/* Toggle — button is the transparent touch target; track is the visual element */
+
+/* Outer button — transparent, ≥ 44px touch target (WCAG 2.5.5) */
+.toggleButton {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 2.75rem; /* 44px */
+	min-height: 2.75rem; /* 44px */
+	padding: 0;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+.toggleButton:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+	border-radius: var(--radius-sm);
+}
+
+/* Inner visual track */
+.toggleTrack {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	width: 2.5rem;
+	height: 1.375rem;
+	flex-shrink: 0;
+	border-radius: var(--radius-4xl);
+	background-color: var(--color-surface-200);
+	transition: background-color var(--duration-normal) var(--ease-default);
+}
+
+.toggleTrackOn {
+	background-color: var(--color-primary);
+}
+
+/* Thumb */
+.toggleThumb {
+	position: absolute;
+	left: var(--sp-3);
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	background-color: var(--color-surface-0);
+	transition: transform var(--duration-normal) var(--ease-default);
+	pointer-events: none;
+}
+
+.toggleTrackOn .toggleThumb {
+	transform: translateX(1.125rem);
+}

@@ -1,0 +1,527 @@
+/* Wider than global --layout-max-width so two-column Films + galleries can reach 5-col masonry. */
+.page {
+	padding: var(--sp-8) var(--sp-6);
+	max-width: min(100%, 108rem);
+	margin: 0 auto;
+}
+
+.title {
+	font-family: var(--font-playfair);
+	font-size: var(--font-hero);
+	margin: 0 0 var(--sp-3);
+}
+
+.subtitle {
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-subtext);
+	line-height: var(--leading-normal);
+	color: var(--color-font-muted);
+	margin: 0 0 var(--sp-6);
+}
+
+.errorState,
+.emptyState {
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-body);
+	line-height: var(--leading-normal);
+	color: var(--color-font-muted);
+	padding: var(--sp-4);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-md);
+}
+
+/* Films + photo galleries: stacked on small viewports; two columns from --bp-lg (design system). */
+.weddingMemoriesContent {
+	display: grid;
+	gap: var(--sp-9);
+	align-items: start;
+}
+
+@media (min-width: 64rem) {
+	.weddingMemoriesContent {
+		/* Slightly wider photos column than films so masonry can reach 5 columns on large screens. */
+		grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
+		column-gap: var(--layout-grid-gap);
+		row-gap: var(--sp-9);
+	}
+}
+
+.weddingMemoriesFilmsColumn,
+.weddingMemoriesGalleriesColumn {
+	min-width: 0;
+	width: 100%;
+}
+
+.weddingMemoriesGalleriesColumn {
+	container-type: inline-size;
+	container-name: wedding-galleries;
+}
+
+/* Vendor films — tabs (Swiss / Nordic minimal) */
+.vendorSection {
+	display: grid;
+	gap: var(--sp-5);
+	width: 100%;
+	max-width: 56rem;
+}
+
+.vendorSectionTitle {
+	margin: 0;
+	font-family: var(--font-playfair), ui-serif, Georgia, serif;
+	font-size: var(--font-heading);
+	font-weight: var(--weight-medium);
+	line-height: var(--leading-tight);
+	color: var(--color-font);
+}
+
+.vendorTabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0;
+	border-bottom: 1px solid var(--color-border);
+}
+
+.vendorTab,
+.vendorTabActive {
+	margin: 0;
+	padding: var(--sp-3) var(--sp-5);
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-subtext);
+	font-weight: var(--weight-medium);
+	line-height: var(--leading-snug);
+	color: var(--color-font-muted);
+	background: transparent;
+	border: none;
+	border-bottom: 2px solid transparent;
+	margin-bottom: -1px;
+	cursor: pointer;
+	transition:
+		color var(--duration-fast) var(--ease-default),
+		border-color var(--duration-fast) var(--ease-default);
+}
+
+.vendorTab:hover {
+	color: var(--color-secondary-800);
+}
+
+.vendorTab:focus-visible {
+	outline: 2px solid var(--color-secondary-300);
+	outline-offset: 2px;
+}
+
+.vendorTabActive {
+	color: var(--color-font);
+	border-bottom-color: var(--color-secondary-800);
+}
+
+.vendorPanel {
+	display: grid;
+	gap: var(--sp-4);
+}
+
+.vendorPlayerShell {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	background: var(--color-surface-100);
+	border-radius: var(--radius-sm);
+	overflow: hidden;
+}
+
+.vendorPlayerInner {
+	position: absolute;
+	inset: 0;
+}
+
+.vendorPlayerLoading {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	max-height: 12rem;
+	border-radius: var(--radius-sm);
+	background: var(--color-surface-100);
+	animation: vendorPlayerPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes vendorPlayerPulse {
+	0%,
+	100% {
+		opacity: 0.55;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+.vendorCite {
+	margin: 0;
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-caption);
+	line-height: var(--leading-normal);
+	color: var(--color-font-muted);
+}
+
+.vendorCiteLink {
+	color: inherit;
+	text-decoration: underline;
+	text-decoration-color: transparent;
+	text-underline-offset: 0.15em;
+	transition: text-decoration-color var(--duration-fast) var(--ease-default);
+}
+
+.vendorCiteLink:hover {
+	color: var(--color-secondary-800);
+	text-decoration-color: var(--color-secondary-400);
+}
+
+/* Public "vendor" galleries — tab strip (matches video "vendor" tab look; horizontal scroll, no visible scrollbar) */
+.galleryTabScroll {
+	width: 100%;
+	min-width: 0;
+	overflow-x: auto;
+	overflow-y: hidden;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	overscroll-behavior-x: contain;
+	border-bottom: 1px solid var(--color-border);
+}
+
+.galleryTabScroll::-webkit-scrollbar {
+	display: none;
+}
+
+.galleryTabsRow {
+	display: inline-flex;
+	flex-wrap: nowrap;
+	align-items: stretch;
+	gap: 0;
+}
+
+.galleryTab,
+.galleryTabActive {
+	flex-shrink: 0;
+	margin: 0;
+	padding: var(--sp-3) var(--sp-5);
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-subtext);
+	font-weight: var(--weight-medium);
+	line-height: var(--leading-snug);
+	color: var(--color-font-muted);
+	background: transparent;
+	border: none;
+	border-bottom: 2px solid transparent;
+	margin-bottom: -1px;
+	cursor: pointer;
+	white-space: nowrap;
+	transition:
+		color var(--duration-fast) var(--ease-default),
+		border-color var(--duration-fast) var(--ease-default);
+}
+
+.galleryTab:hover {
+	color: var(--color-secondary-800);
+}
+
+.galleryTab:focus-visible {
+	outline: 2px solid var(--color-secondary-300);
+	outline-offset: 2px;
+}
+
+.galleryTabActive {
+	color: var(--color-font);
+	border-bottom-color: var(--color-secondary-800);
+}
+
+.galleryTabActive:focus-visible {
+	outline: 2px solid var(--color-secondary-300);
+	outline-offset: 2px;
+}
+
+.galleryTabPanel {
+	display: grid;
+	gap: var(--sp-4);
+}
+
+.galleryList {
+	display: grid;
+	gap: var(--sp-8);
+	width: 100%;
+	min-width: 0;
+}
+
+.gallerySection {
+	display: grid;
+	gap: var(--sp-4);
+}
+
+.galleryHeader {
+	display: grid;
+	gap: var(--sp-2);
+}
+
+.galleryTitle {
+	margin: 0;
+	font-family: var(--font-playfair), ui-serif, Georgia, serif;
+	font-size: var(--font-title);
+	font-weight: var(--weight-medium);
+	line-height: var(--leading-tight);
+}
+
+.galleryDescription {
+	margin: 0;
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-subtext);
+	line-height: var(--leading-normal);
+	color: var(--color-font-muted);
+}
+
+.mediaHeading {
+	margin: 0;
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-heading);
+	font-weight: var(--weight-semibold);
+	line-height: var(--leading-snug);
+}
+
+/* Masonry (API photos): column flow — variable tile heights, tight gutters (see REF--gallery_grid_layout--desktop--Cosmos.png) */
+.masonryGroup {
+	display: grid;
+	gap: var(--sp-3);
+}
+
+.masonryGrid {
+	width: 100%;
+	column-count: 2;
+	column-gap: var(--sp-6);
+}
+
+.masonryItem {
+	break-inside: avoid;
+	page-break-inside: avoid;
+	-webkit-column-break-inside: avoid;
+	margin-bottom: var(--sp-6);
+}
+
+.masonryLink {
+	display: block;
+	line-height: 0;
+}
+
+.masonryImage {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: var(--radius-sm);
+	background: var(--color-surface-100);
+}
+
+.masonryCaption {
+	margin: var(--sp-2) 0 0;
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-caption);
+	line-height: var(--leading-snug);
+	color: var(--color-font-muted);
+}
+
+/* Masonry column count follows the *galleries* column width (fr-based; thresholds tuned for 5 cols). */
+@container wedding-galleries (min-width: 26rem) {
+	.masonryGrid {
+		column-count: 3;
+	}
+}
+
+@container wedding-galleries (min-width: 34rem) {
+	.masonryGrid {
+		column-count: 4;
+	}
+}
+
+@container wedding-galleries (min-width: 44rem) {
+	.masonryGrid {
+		column-count: 5;
+	}
+}
+
+/* Pagination bar — sits below the masonry grid, only rendered when total_pages > 1 */
+.paginationBar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--sp-4);
+	padding-top: var(--sp-5);
+	border-top: 1px solid var(--color-border);
+}
+
+.paginationBtn {
+	padding: var(--sp-2) var(--sp-5);
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-subtext);
+	font-weight: var(--weight-medium);
+	line-height: var(--leading-snug);
+	color: var(--color-font-muted);
+	background: transparent;
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-sm);
+	cursor: pointer;
+	transition:
+		color var(--duration-fast) var(--ease-default),
+		border-color var(--duration-fast) var(--ease-default);
+}
+
+.paginationBtn:hover:not(:disabled) {
+	color: var(--color-font);
+	border-color: var(--color-secondary-800);
+}
+
+.paginationBtn:focus-visible {
+	outline: 2px solid var(--color-secondary-300);
+	outline-offset: 2px;
+}
+
+.paginationBtn:disabled {
+	opacity: 0.35;
+	cursor: default;
+}
+
+.paginationMeta {
+	margin: 0;
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-caption);
+	line-height: var(--leading-snug);
+	color: var(--color-font-muted);
+}
+
+/* Masonry hover overlay — expand button fades in on image hover / focus-within */
+.masonryImageWrap {
+	position: relative;
+	overflow: hidden;
+	border-radius: var(--radius-sm);
+	line-height: 0;
+}
+
+.masonryOverlay {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--sp-3);
+	background: rgba(0, 0, 0, 0.35);
+	opacity: 0;
+	transition: opacity var(--duration-fast) var(--ease-default);
+}
+
+.masonryImageWrap:hover .masonryOverlay,
+.masonryImageWrap:focus-within .masonryOverlay {
+	opacity: 1;
+}
+
+.masonryExpandBtn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	background: rgba(255, 255, 255, 0.15);
+	border: 1px solid rgba(255, 255, 255, 0.45);
+	border-radius: var(--radius-sm);
+	color: white;
+	cursor: pointer;
+	transition:
+		background var(--duration-fast) var(--ease-default),
+		border-color var(--duration-fast) var(--ease-default);
+}
+
+.masonryExpandBtn:hover {
+	background: rgba(255, 255, 255, 0.3);
+	border-color: rgba(255, 255, 255, 0.75);
+}
+
+.masonryExpandBtn:focus-visible {
+	outline: 2px solid white;
+	outline-offset: 2px;
+}
+
+.masonryExpandBtn:disabled {
+	opacity: 0.45;
+	cursor: default;
+}
+
+/* Lightbox — native <dialog> full-screen modal */
+.lightboxDialog {
+	position: fixed;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
+	border: none;
+	padding: 0;
+	margin: 0;
+	background: transparent;
+	overflow: hidden;
+}
+
+.lightboxDialog::backdrop {
+	background: rgba(0, 0, 0, 0.92);
+}
+
+.lightboxContent {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	padding: var(--sp-9);
+}
+
+.lightboxImg {
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+	border-radius: var(--radius-sm);
+}
+
+/* Actions row (download + close) pinned to the top-right corner of the lightbox */
+.lightboxActions {
+	position: absolute;
+	top: var(--sp-5);
+	right: var(--sp-5);
+	display: flex;
+	align-items: center;
+	gap: var(--sp-3);
+	z-index: 1;
+}
+
+.lightboxActionBtn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: var(--radius-sm);
+	color: white;
+	cursor: pointer;
+	transition:
+		background var(--duration-fast) var(--ease-default),
+		border-color var(--duration-fast) var(--ease-default);
+}
+
+.lightboxActionBtn:hover:not(:disabled) {
+	background: rgba(255, 255, 255, 0.25);
+	border-color: rgba(255, 255, 255, 0.65);
+}
+
+.lightboxActionBtn:focus-visible {
+	outline: 2px solid white;
+	outline-offset: 2px;
+}
+
+.lightboxActionBtn:disabled {
+	opacity: 0.45;
+	cursor: default;
+}

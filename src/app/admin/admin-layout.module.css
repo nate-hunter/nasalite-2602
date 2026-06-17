@@ -1,0 +1,119 @@
+/**
+ * Admin layout shell — shared across all /admin/* routes.
+ * Tab strip tokens mirror the vendorTab / galleryTab pattern in
+ * src/app/galleries/wedding-memories/wedding-memories.module.css.
+ */
+
+/* ─── Page shell ─────────────────────────────────────────────────────────── */
+
+.layoutShell {
+	min-height: 100vh;
+	padding: var(--sp-8) var(--layout-gutter);
+}
+
+.layoutMain {
+	display: flex;
+	flex-direction: column;
+	row-gap: var(--sp-6);
+	max-width: var(--layout-max-width);
+	margin-inline: auto;
+}
+
+/* ─── Shared header ───────────────────────────────────────────────────────── */
+
+.layoutHeader {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-2);
+}
+
+.layoutTitle {
+	font-family: var(--font-playfair), ui-serif, Georgia, serif;
+	font-size: var(--font-title);
+	font-weight: var(--weight-normal);
+	line-height: var(--leading-tight);
+	color: var(--color-font);
+	margin: 0;
+}
+
+.layoutSubtitle {
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-subtext);
+	color: var(--color-font-muted);
+	margin: 0;
+	max-width: 42rem;
+}
+
+/* ─── Tab strip ───────────────────────────────────────────────────────────── */
+
+/* Horizontal-scroll shell; hides the scrollbar on all engines. */
+.tabsShell {
+	width: 100%;
+	min-width: 0;
+	overflow-x: auto;
+	overflow-y: hidden;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	overscroll-behavior-x: contain;
+	border-bottom: 1px solid var(--color-border);
+}
+
+.tabsShell::-webkit-scrollbar {
+	display: none;
+}
+
+/* Inline-flex so the strip only grows as wide as its tabs. */
+.tabsRow {
+	display: inline-flex;
+	flex-wrap: nowrap;
+	align-items: stretch;
+	gap: 0;
+}
+
+/* Base tab — Link element, so text-decoration reset is required. */
+.tab,
+.tabActive {
+	flex-shrink: 0;
+	display: inline-flex;
+	align-items: center;
+	margin: 0;
+	padding: var(--sp-3) var(--sp-5);
+	font-family: var(--font-garet), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-subtext);
+	font-weight: var(--weight-medium);
+	line-height: var(--leading-snug);
+	color: var(--color-font-muted);
+	background: transparent;
+	border: none;
+	border-bottom: 2px solid transparent;
+	margin-bottom: -1px;
+	text-decoration: none;
+	white-space: nowrap;
+	transition:
+		color var(--duration-fast) var(--ease-default),
+		border-color var(--duration-fast) var(--ease-default);
+}
+
+.tab:hover {
+	color: var(--color-secondary-800);
+}
+
+.tab:focus-visible,
+.tabActive:focus-visible {
+	outline: 2px solid var(--color-secondary-300);
+	outline-offset: 2px;
+}
+
+/* Active state — underline accent matches vendorTabActive. */
+.tabActive {
+	color: var(--color-font);
+	border-bottom-color: var(--color-secondary-800);
+}
+
+/* ─── Tab panel ───────────────────────────────────────────────────────────── */
+
+.tabPanel {
+	display: flex;
+	flex-direction: column;
+	row-gap: var(--sp-7);
+}

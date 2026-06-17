@@ -1,0 +1,12 @@
+/**
+ * Shared admin tab content — section headings under layout `h1`.
+ * Imported by overview, galleries, and media routes for one source of truth.
+ */
+
+.sectionTitle {
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-heading);
+	font-weight: var(--weight-thick);
+	color: var(--color-font);
+	margin: 0;
+}
