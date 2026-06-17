@@ -1,4 +1,4 @@
-import { buildSrc } from '@imagekit/next';
+import type { Transformation } from '@imagekit/javascript';
 
 import { imagekiturl, storage_public_object_url } from '@/lib/config';
 
@@ -15,6 +15,27 @@ export type BuildMediaDeliveryUrlParams = {
 
 function normalize_file_path(file_path: string): string {
 	return file_path.replace(/^\/+/, '');
+}
+
+/** ImageKit `tr` query value for `transformationPosition: 'query'` (matches verify-imagekit-landn). */
+function transformations_to_tr_query(transformations: Array<Transformation>): string {
+	const chains = transformations.map((transform) => {
+		const parts: string[] = [];
+		if (transform.width !== undefined) parts.push(`w-${transform.width}`);
+		if (transform.height !== undefined) parts.push(`h-${transform.height}`);
+		if (transform.format !== undefined) parts.push(`f-${transform.format}`);
+		if (transform.quality !== undefined) parts.push(`q-${transform.quality}`);
+		return parts.join(',');
+	});
+	return chains.join(':');
+}
+
+function build_imagekit_unsigned_url(path: string, preset: MediaDeliveryPreset): string {
+	const endpoint = imagekiturl.replace(/\/$/, '');
+	const base = `${endpoint}/${path}`;
+	const transformation = MEDIA_DELIVERY_PRESET_TRANSFORMS[preset];
+	if (transformation.length === 0) return base;
+	return `${base}?tr=${transformations_to_tr_query(transformation)}`;
 }
 
 /**
@@ -34,12 +55,5 @@ export function build_media_delivery_url({
 		return storage_public_object_url(bucket_id, path);
 	}
 
-	const transformation = MEDIA_DELIVERY_PRESET_TRANSFORMS[preset];
-
-	return buildSrc({
-		urlEndpoint: imagekiturl,
-		src: path,
-		transformation: transformation.length > 0 ? transformation : undefined,
-		transformationPosition: 'query',
-	});
+	return build_imagekit_unsigned_url(path, preset);
 }
