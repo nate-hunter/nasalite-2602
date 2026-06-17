@@ -12,11 +12,11 @@ export type UserRegisterFormProps = {
 };
 
 export function UserRegisterForm({ className }: UserRegisterFormProps) {
-	const [state, formAction, pending] = useActionState(registeruserwithemailpassword, initialState);
+	const [state, formaction, pending] = useActionState(registeruserwithemailpassword, initialState);
 
 	return (
 		<form
-			action={formAction}
+			action={formaction}
 			noValidate
 			aria-label="Registration form"
 			className={[styles.form, className].filter(Boolean).join(' ')}

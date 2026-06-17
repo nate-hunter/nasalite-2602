@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { UserLoginForm } from './_components/login-form';
 import { UserRegisterForm } from './_components/register-form';
 import styles from './page.module.css';
+import { TestUserValues } from './_components/test-elements';
 
 type AuthMode = 'login' | 'register';
 
@@ -19,6 +20,8 @@ export default function AuthPage() {
 						{mode === 'login' ? 'Sign in to your account' : 'Create a new account'}
 					</p>
 				</header>
+
+				{/* <TestUserValues /> */}
 
 				<div className={styles.card}>
 					<div className={styles.modeToggle} role="tablist" aria-label="Login or register">

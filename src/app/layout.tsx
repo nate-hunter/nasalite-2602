@@ -11,6 +11,7 @@ import {
 } from '@/styles/fonts';
 import './globals.css';
 import { ImageKitProviderShell } from '@/lib/imagekit/ImageKitProviderShell';
+import Navbar from '@/ui/Navbar/Navbar';
 
 export const metadata: Metadata = {
 	title: 'N + L',
@@ -36,7 +37,10 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={fontClassNames}>
-				<ImageKitProviderShell>{children}</ImageKitProviderShell>
+				<ImageKitProviderShell>
+					<Navbar />
+					{children}
+				</ImageKitProviderShell>
 			</body>
 		</html>
 	);
