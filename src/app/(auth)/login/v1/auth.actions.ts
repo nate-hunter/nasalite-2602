@@ -38,7 +38,7 @@ export async function registeruserwithemailpassword(
 				full_name: trimfullname || undefined,
 			},
 			...(process.env.NEXT_PUBLIC_SITE_URL && {
-				emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/confirm`,
+				emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/api/auth/confirm`,
 			}),
 		},
 	};
@@ -91,6 +91,7 @@ export async function loginuserwithemailpassword(
 					: error.message || 'Login failed. Please try again.';
 			return { success: false, error: errormessage };
 		}
+
 		if (data.session) {
 			return { success: true };
 		}

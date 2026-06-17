@@ -27,6 +27,8 @@
 
 .wordmark {
 	font-family: var(--font-playfair), ui-serif, Georgia, serif;
+	/* font-family: var(--font-aegean); */
+
 	font-size: var(--font-hero);
 	/* font-weight: var(--weight-extrabold); */
 	/* text-transform: uppercase; */
