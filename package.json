@@ -1,26 +1,33 @@
 {
-  "name": "nateandlisa-2602",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
-  "dependencies": {
-    "@supabase/ssr": "^0.8.0",
-    "@supabase/supabase-js": "^2.97.0",
-    "next": "16.1.6",
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.1.6",
-    "typescript": "^5"
-  }
+	"name": "nateandlisa-2602",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "eslint",
+		"gen:types": "supabase gen types --local --lang typescript 2>/dev/null > src/lib/supabase/database.types.ts",
+		"verify:imagekit-landn": "bash scripts/verify-imagekit-landn.sh"
+	},
+	"dependencies": {
+		"@imagekit/next": "^2.1.5",
+		"@supabase/ssr": "^0.8.0",
+		"@supabase/supabase-js": "^2.97.0",
+		"exifr": "^7.1.3",
+		"imagekit": "^6.0.0",
+		"next": "16.1.6",
+		"react": "19.2.3",
+		"react-dom": "19.2.3",
+		"react-player": "^3.4.0",
+		"tus-js-client": "^4.3.1"
+	},
+	"devDependencies": {
+		"@types/node": "^20",
+		"@types/react": "^19",
+		"@types/react-dom": "^19",
+		"eslint": "^9",
+		"eslint-config-next": "16.1.6",
+		"typescript": "^5"
+	}
 }
