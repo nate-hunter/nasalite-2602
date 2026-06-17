@@ -1,0 +1,614 @@
+/**
+ * Admin gallery detail — header + media sections under /admin layout.
+ * Masonry patterns align with admin-page.module.css.
+ */
+
+.page {
+	display: flex;
+	flex-direction: column;
+	row-gap: var(--sp-8);
+}
+
+.backLink {
+	display: inline-block;
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-body);
+	color: var(--color-primary);
+	text-decoration: none;
+}
+
+.backLink:hover {
+	text-decoration: underline;
+}
+
+.backLink:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+.viewPublicLink {
+	display: inline-block;
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-body);
+	color: var(--color-primary);
+	text-decoration: none;
+}
+
+.viewPublicLink:hover {
+	text-decoration: underline;
+}
+
+.viewPublicLink:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+.galleryHeader {
+	display: flex;
+	flex-direction: column;
+	row-gap: var(--sp-4);
+}
+
+.settingsSection {
+	display: flex;
+	flex-direction: column;
+	row-gap: var(--sp-6);
+	padding-top: var(--sp-6);
+	border-top: 1px solid var(--color-border);
+}
+
+.slugPanel {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-4);
+	max-width: 28rem;
+}
+
+.slugLabel {
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-caption);
+	font-weight: var(--weight-medium);
+	color: var(--color-font);
+}
+
+.slugInput {
+	padding: var(--sp-3) var(--sp-4);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-sm);
+	background-color: var(--color-input-background);
+	font-size: var(--font-body);
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.slugInput:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+	border-color: var(--color-primary);
+}
+
+.slugHint {
+	margin: 0;
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-small);
+	color: var(--color-font-muted);
+}
+
+.slugSubmit {
+	align-self: flex-start;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 2.75rem;
+	padding: var(--sp-5) var(--sp-6);
+	border: 1px solid var(--color-primary);
+	border-radius: var(--radius-sm);
+	background-color: var(--color-primary);
+	color: var(--color-primary-950);
+	font-family: var(--font-thicccboi), ui-sans-serif, system-ui, sans-serif;
+	font-weight: var(--weight-extrabold);
+	font-size: var(--font-btn);
+	line-height: 1.15;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition:
+		background-color var(--duration-normal) var(--ease-default),
+		border-color var(--duration-normal) var(--ease-default),
+		opacity var(--duration-normal) var(--ease-default);
+}
+
+.slugSubmit:hover:not(:disabled) {
+	background-color: var(--color-primary-300);
+	border-color: var(--color-primary-300);
+}
+
+.slugSubmit:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+.slugSubmit:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.assignmentPanel {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-5);
+}
+
+.assignmentTitle {
+	margin: 0;
+	padding-top: var(--sp-5);
+	border-top: 1px solid var(--color-border);
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-subtext);
+	font-weight: var(--weight-bold);
+	color: var(--color-font);
+}
+
+.assignmentHint {
+	margin: 0;
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-small);
+	color: var(--color-font-muted);
+}
+
+.assignmentField {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-2);
+}
+
+.assignmentFieldLabel {
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-caption);
+	font-weight: var(--weight-medium);
+	color: var(--color-font);
+}
+
+.assignmentCreateForm {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--sp-3);
+}
+
+.assignmentList {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-4);
+}
+
+.assignmentItem {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--sp-3);
+	padding: var(--sp-4);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-sm);
+	background-color: var(--color-surface-0);
+}
+
+.assignmentInput {
+	padding: var(--sp-3) var(--sp-4);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-sm);
+	background-color: var(--color-input-background);
+	font-size: var(--font-body);
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.assignmentInput:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+	border-color: var(--color-primary);
+}
+
+.assignmentSelect {
+	padding: var(--sp-3) var(--sp-4);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-sm);
+	background-color: var(--color-input-background);
+	font-size: var(--font-body);
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	width: 100%;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.assignmentSelect:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+	border-color: var(--color-primary);
+}
+
+.publicStateRow {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-3);
+	flex-wrap: wrap;
+}
+
+.publicToggleLabel {
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-small);
+	color: var(--color-font-muted);
+}
+
+/* Outer button — transparent 44×44 touch target */
+.publicToggleButton {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 2.75rem;
+	min-height: 2.75rem;
+	padding: 0;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+.publicToggleButton:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+	border-radius: var(--radius-sm);
+}
+
+.publicToggleButton:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+/* Visual track */
+.publicToggleTrack {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	width: 2.5rem;
+	height: 1.375rem;
+	flex-shrink: 0;
+	border-radius: var(--radius-4xl);
+	background-color: var(--color-surface-200);
+	transition: background-color var(--duration-normal) var(--ease-default);
+}
+
+.publicToggleTrackOn {
+	background-color: var(--color-primary);
+}
+
+/* Thumb */
+.publicToggleThumb {
+	position: absolute;
+	left: var(--sp-3);
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	background-color: var(--color-surface-0);
+	transition: transform var(--duration-normal) var(--ease-default);
+	pointer-events: none;
+}
+
+.publicToggleTrackOn .publicToggleThumb {
+	transform: translateX(1.125rem);
+}
+
+.assignmentToggle {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--sp-3);
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-body);
+	color: var(--color-font);
+	cursor: pointer;
+}
+
+.assignmentButton,
+.assignmentDangerButton {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 2.75rem;
+	padding: var(--sp-3) var(--sp-5);
+	border-radius: var(--radius-sm);
+	font-family: var(--font-thicccboi), ui-sans-serif, system-ui, sans-serif;
+	font-weight: var(--weight-extrabold);
+	font-size: var(--font-btn);
+	line-height: 1.15;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition:
+		background-color var(--duration-normal) var(--ease-default),
+		border-color var(--duration-normal) var(--ease-default),
+		opacity var(--duration-normal) var(--ease-default);
+}
+
+.assignmentButton {
+	border: 1px solid var(--color-primary);
+	background-color: var(--color-primary);
+	color: var(--color-primary-950);
+}
+
+.assignmentButton:hover:not(:disabled) {
+	background-color: var(--color-primary-300);
+	border-color: var(--color-primary-300);
+}
+
+.assignmentDangerButton {
+	border: 1px solid var(--color-border);
+	background-color: var(--color-surface-0);
+	color: var(--color-font-muted);
+}
+
+.assignmentDangerButton:hover:not(:disabled) {
+	color: var(--color-font);
+	border-color: var(--color-font-muted);
+}
+
+.assignmentButton:focus-visible,
+.assignmentDangerButton:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+.assignmentButton:disabled,
+.assignmentDangerButton:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.assignmentActions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--sp-3);
+}
+
+.assignmentEmpty {
+	margin: 0;
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-body);
+	color: var(--color-font-muted);
+}
+
+.messageError,
+.messageSuccess {
+	margin: 0;
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-caption);
+}
+
+.messageError {
+	color: var(--color-danger-700);
+}
+
+.messageSuccess {
+	color: var(--color-font-muted);
+}
+
+.galleryTitle {
+	font-family: var(--font-playfair), ui-serif, Georgia, serif;
+	font-size: var(--font-title);
+	font-weight: var(--weight-thick);
+	color: var(--color-font);
+	margin: 0;
+}
+
+.galleryDescription {
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-body);
+	color: var(--color-font-muted);
+	margin: 0;
+}
+
+.galleryMeta {
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-caption);
+	color: var(--color-font-muted);
+	margin: 0;
+}
+
+.galleryMeta code {
+	font-size: 0.9em;
+}
+
+.badgePublic,
+.badgePrivate {
+	display: inline-flex;
+	align-items: center;
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-small);
+	font-weight: var(--weight-medium);
+	padding: var(--sp-2) var(--sp-4);
+	border-radius: var(--radius-lg);
+	line-height: 1;
+}
+
+.badgePublic {
+	background-color: var(--color-primary-50);
+	color: var(--color-primary-700);
+}
+
+.badgePrivate {
+	background-color: var(--color-surface-100);
+	color: var(--color-font-muted);
+}
+
+.section {
+	display: flex;
+	flex-direction: column;
+	row-gap: var(--sp-5);
+}
+
+.masonry {
+	column-count: 2;
+	column-gap: var(--sp-4);
+}
+
+@media (min-width: 48rem) {
+	.assignmentCreateForm {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.assignmentItem {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.assignmentActions {
+		grid-column: 1 / -1;
+	}
+
+	.masonry {
+		column-count: 3;
+	}
+}
+
+@media (min-width: 64rem) {
+	.masonry {
+		column-count: 4;
+	}
+}
+
+.mediaCard {
+	break-inside: avoid;
+	margin-bottom: var(--sp-4);
+}
+
+.mediaFrame {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-sm);
+	overflow: hidden;
+	background-color: var(--color-surface-0);
+}
+
+.mediaThumb {
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	display: block;
+}
+
+.mediaThumbPlaceholder {
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	background-color: var(--color-surface-100);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	color: var(--color-font-muted);
+}
+
+.mediaMeta {
+	padding: var(--sp-4);
+	display: flex;
+	flex-direction: column;
+	row-gap: var(--sp-2);
+}
+
+.mediaLabel {
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-weight: var(--weight-semibold);
+	font-size: var(--font-body);
+}
+
+.mediaSub {
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-small);
+	color: var(--color-font-muted);
+}
+
+.empty {
+	color: var(--color-font-muted);
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	margin: 0;
+}
+
+.hint {
+	font-size: var(--font-caption);
+	color: var(--color-font-muted);
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	margin: 0;
+}
+
+.errorBanner {
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-caption);
+	color: var(--color-font);
+	background-color: var(--color-surface-100);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-sm);
+	padding: var(--sp-3) var(--sp-4);
+	margin: 0;
+}
+
+/* Shared card actions — pair with `.removeButton` or `.addButton` on the same element. */
+.actionButton {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 2.75rem;
+	min-height: 2.75rem;
+	padding: var(--sp-3);
+	margin: 0 var(--sp-4) var(--sp-4);
+	align-self: flex-start;
+	cursor: pointer;
+	border-radius: var(--radius-sm);
+	transition:
+		background-color var(--duration-normal) var(--ease-default),
+		border-color var(--duration-normal) var(--ease-default),
+		color var(--duration-normal) var(--ease-default),
+		opacity var(--duration-normal) var(--ease-default);
+}
+
+.actionButton:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+.removeButton {
+	border: 1px solid var(--color-border);
+	background-color: var(--color-surface-0);
+	color: var(--color-font-muted);
+}
+
+.removeButton:hover:not(:disabled) {
+	color: var(--color-font);
+	border-color: var(--color-font-muted);
+}
+
+.removeButton:disabled {
+	opacity: 0.55;
+	cursor: not-allowed;
+}
+
+.addButton {
+	border: 1px solid var(--color-primary);
+	background-color: var(--color-primary-50);
+	color: var(--color-primary-700);
+}
+
+.addButton:hover:not(:disabled) {
+	background-color: var(--color-primary-100);
+}
+
+.addButton:disabled {
+	opacity: 0.55;
+	cursor: not-allowed;
+}
+
+.pendingRowHint {
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-caption);
+	color: var(--color-font-muted);
+	margin: 0 var(--sp-4) var(--sp-4);
+}

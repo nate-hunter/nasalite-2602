@@ -1,7 +1,16 @@
 import type { Metadata } from 'next';
-import { dmSans, gothicA1, playfairDisplay, sonoMono } from '@/styles/fonts';
+import {
+	dmSans,
+	gothicA1,
+	playfairDisplay,
+	sonoMono,
+	wonderUnitSans,
+	thicccboi,
+	garet,
+	aegean,
+} from '@/styles/fonts';
 import './globals.css';
-import Navbar from '@/ui/Navbar/Navbar';
+import { ImageKitProviderShell } from '@/lib/imagekit/ImageKitProviderShell';
 
 export const metadata: Metadata = {
 	title: 'N + L',
@@ -13,6 +22,10 @@ const fontClassNames = [
 	sonoMono.variable,
 	dmSans.variable,
 	gothicA1.variable,
+	wonderUnitSans.variable,
+	thicccboi.variable,
+	garet.variable,
+	aegean.variable,
 ].join(' ');
 
 export default function RootLayout({
@@ -23,8 +36,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={fontClassNames}>
-				<Navbar />
-				{children}
+				<ImageKitProviderShell>{children}</ImageKitProviderShell>
 			</body>
 		</html>
 	);

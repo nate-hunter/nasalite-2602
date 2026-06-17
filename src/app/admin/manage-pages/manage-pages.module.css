@@ -1,0 +1,443 @@
+/**
+ * Admin manage-pages tab — page selector, assigned gallery list, assign form.
+ * Page shell and shared header live in admin-layout.module.css.
+ * Uses design tokens from src/styles/tokens.
+ */
+
+.section {
+	display: flex;
+	flex-direction: column;
+	row-gap: var(--sp-5);
+	margin-bottom: var(--sp-8);
+}
+
+.subtitle {
+	margin: 0;
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-body);
+	color: var(--color-font-muted);
+}
+
+/* ─── Page selector row ───────────────────────────────────────────────────── */
+
+.pageSelector {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: var(--sp-4);
+}
+
+.pageSelectorLabel {
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-caption);
+	font-weight: var(--weight-medium);
+	color: var(--color-font);
+}
+
+.pageSelect {
+	padding: var(--sp-3) var(--sp-4);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-sm);
+	background-color: var(--color-input-background);
+	font-size: var(--font-body);
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	cursor: pointer;
+	min-width: 12rem;
+}
+
+.pageSelect:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+	border-color: var(--color-primary);
+}
+
+.noPages {
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-body);
+	color: var(--color-font-muted);
+}
+
+/* ─── New page inline form ────────────────────────────────────────────────── */
+
+.newPageButton {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 2.75rem;
+	padding: var(--sp-3) var(--sp-5);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-sm);
+	background-color: var(--color-surface-0);
+	color: var(--color-font);
+	font-family: var(--font-thicccboi), ui-sans-serif, system-ui, sans-serif;
+	font-weight: var(--weight-extrabold);
+	font-size: var(--font-btn);
+	line-height: 1.15;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition:
+		border-color var(--duration-normal) var(--ease-default),
+		color var(--duration-normal) var(--ease-default);
+}
+
+.newPageButton:hover:not(:disabled) {
+	border-color: var(--color-font-muted);
+	color: var(--color-font);
+}
+
+.newPageButton:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+.newPageForm {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-3);
+	flex-wrap: wrap;
+}
+
+.newPageInput {
+	padding: var(--sp-3) var(--sp-4);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-sm);
+	background-color: var(--color-input-background);
+	font-size: var(--font-body);
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	min-width: 14rem;
+}
+
+.newPageInput:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+	border-color: var(--color-primary);
+}
+
+.confirmButton {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 2.75rem;
+	padding: var(--sp-3) var(--sp-5);
+	border: 1px solid var(--color-primary);
+	border-radius: var(--radius-sm);
+	background-color: var(--color-primary);
+	color: var(--color-primary-950);
+	font-family: var(--font-thicccboi), ui-sans-serif, system-ui, sans-serif;
+	font-weight: var(--weight-extrabold);
+	font-size: var(--font-btn);
+	line-height: 1.15;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition:
+		background-color var(--duration-normal) var(--ease-default),
+		border-color var(--duration-normal) var(--ease-default);
+}
+
+.confirmButton:hover:not(:disabled) {
+	background-color: var(--color-primary-300);
+	border-color: var(--color-primary-300);
+}
+
+.confirmButton:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+.cancelButton {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 2.75rem;
+	padding: var(--sp-3) var(--sp-5);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-sm);
+	background-color: transparent;
+	color: var(--color-font-muted);
+	font-family: var(--font-thicccboi), ui-sans-serif, system-ui, sans-serif;
+	font-weight: var(--weight-extrabold);
+	font-size: var(--font-btn);
+	line-height: 1.15;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition:
+		border-color var(--duration-normal) var(--ease-default),
+		color var(--duration-normal) var(--ease-default);
+}
+
+.cancelButton:hover:not(:disabled) {
+	border-color: var(--color-font-muted);
+	color: var(--color-font);
+}
+
+.cancelButton:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+/* ─── Assigned galleries section ──────────────────────────────────────────── */
+
+.assignedSection,
+.assignSection {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-4);
+	padding-top: var(--sp-6);
+	border-top: 1px solid var(--color-border);
+}
+
+.sectionHeading {
+	margin: 0;
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-subtext);
+	font-weight: var(--weight-bold);
+	color: var(--color-font);
+}
+
+.empty {
+	margin: 0;
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-body);
+	color: var(--color-font-muted);
+}
+
+/* ─── Assignment list ─────────────────────────────────────────────────────── */
+
+.assignmentList {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-3);
+}
+
+.assignmentItem {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--sp-3);
+	padding: var(--sp-4);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-sm);
+	background-color: var(--color-surface-0);
+}
+
+@media (min-width: 40rem) {
+	.assignmentItem {
+		grid-template-columns: 1fr auto auto auto;
+		align-items: center;
+	}
+}
+
+.assignmentGalleryInfo {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-3);
+	flex-wrap: wrap;
+	min-width: 0;
+}
+
+.galleryLink {
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-body);
+	font-weight: var(--weight-semibold);
+	color: var(--color-primary);
+	text-decoration: none;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.galleryLink:hover {
+	text-decoration: underline;
+}
+
+.galleryLink:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+	border-radius: var(--radius-sm);
+}
+
+.badgePublic,
+.badgePrivate {
+	display: inline-flex;
+	align-items: center;
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-small);
+	font-weight: var(--weight-medium);
+	padding: var(--sp-2) var(--sp-4);
+	border-radius: var(--radius-lg);
+	line-height: 1;
+	flex-shrink: 0;
+}
+
+.badgePublic {
+	background-color: var(--color-primary-50);
+	color: var(--color-primary-700);
+}
+
+.badgePrivate {
+	background-color: var(--color-surface-100);
+	color: var(--color-font-muted);
+}
+
+/* ─── Order field ─────────────────────────────────────────────────────────── */
+
+.assignmentField {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-2);
+}
+
+.fieldLabel {
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-caption);
+	font-weight: var(--weight-medium);
+	color: var(--color-font-muted);
+	white-space: nowrap;
+}
+
+.orderInput {
+	width: 4rem;
+	padding: var(--sp-2) var(--sp-3);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-sm);
+	background-color: var(--color-input-background);
+	font-size: var(--font-body);
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	text-align: center;
+}
+
+.orderInput:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+	border-color: var(--color-primary);
+}
+
+/* ─── Active toggle ───────────────────────────────────────────────────────── */
+
+.activeToggle {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--sp-3);
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-body);
+	color: var(--color-font);
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+/* ─── Row action buttons ──────────────────────────────────────────────────── */
+
+.assignmentActions {
+	display: flex;
+	gap: var(--sp-3);
+	flex-wrap: wrap;
+}
+
+.saveButton,
+.removeButton,
+.assignButton {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 2.75rem;
+	padding: var(--sp-3) var(--sp-5);
+	border-radius: var(--radius-sm);
+	font-family: var(--font-thicccboi), ui-sans-serif, system-ui, sans-serif;
+	font-weight: var(--weight-extrabold);
+	font-size: var(--font-btn);
+	line-height: 1.15;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition:
+		background-color var(--duration-normal) var(--ease-default),
+		border-color var(--duration-normal) var(--ease-default),
+		color var(--duration-normal) var(--ease-default),
+		opacity var(--duration-normal) var(--ease-default);
+}
+
+.saveButton,
+.assignButton {
+	border: 1px solid var(--color-primary);
+	background-color: var(--color-primary);
+	color: var(--color-primary-950);
+}
+
+.saveButton:hover:not(:disabled),
+.assignButton:hover:not(:disabled) {
+	background-color: var(--color-primary-300);
+	border-color: var(--color-primary-300);
+}
+
+.removeButton {
+	border: 1px solid var(--color-border);
+	background-color: var(--color-surface-0);
+	color: var(--color-font-muted);
+}
+
+.removeButton:hover:not(:disabled) {
+	color: var(--color-font);
+	border-color: var(--color-font-muted);
+}
+
+.saveButton:focus-visible,
+.removeButton:focus-visible,
+.assignButton:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+.saveButton:disabled,
+.removeButton:disabled,
+.assignButton:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+/* ─── Assign gallery form ─────────────────────────────────────────────────── */
+
+.assignForm {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-3);
+	flex-wrap: wrap;
+}
+
+.gallerySelect {
+	padding: var(--sp-3) var(--sp-4);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-sm);
+	background-color: var(--color-input-background);
+	font-size: var(--font-body);
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	cursor: pointer;
+	min-width: 14rem;
+}
+
+.gallerySelect:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+	border-color: var(--color-primary);
+}
+
+/* ─── Feedback messages ───────────────────────────────────────────────────── */
+
+.messageError,
+.messageSuccess {
+	margin: 0;
+	font-family: var(--font-wonder), ui-sans-serif, system-ui, sans-serif;
+	font-size: var(--font-caption);
+}
+
+.messageError {
+	color: var(--color-danger-700);
+}
+
+.messageSuccess {
+	color: var(--color-font-muted);
+}

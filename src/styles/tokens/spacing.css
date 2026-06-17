@@ -18,3 +18,73 @@
 	--sp-10: 6.854rem;
 	--sp-11: 11.089rem;
 }
+
+.gr {
+	--sp0: 0rem;
+	--sp-r: 1rem; /*root spacing*/
+	--sp: 1rem; /*root spacing*/
+	--sp-m1: 0.618rem;
+	--sp-p1: 1.618rem;
+
+	--sp-m5: 0.09rem;
+	--sp-m4: 0.146rem;
+	--sp-m3: 0.236rem;
+	--sp-m2: 0.382rem;
+	--sp-m1: 0.618rem;
+	--sp-r: 1rem;
+	--sp-p1: 1.618rem;
+	--sp-p2: 2.618rem;
+	--sp-p3: 4.236rem;
+	--sp-p4: 6.854rem;
+	--sp-p5: 11.089rem;
+
+	--sp-root: 1rem;
+	--sp-3xs: ;
+	--sp-2xs: ;
+	--sp-xs: ;
+	--sp-sm: cal(var(--sp-md) / 1.618);
+	--sp-md: var(--sp-root);
+	--sp-lg: ;
+	--sp-xl: ;
+	--sp-2xl: ;
+	--sp-3xl: ;
+
+	--sp-0: 0rem;
+	--sp-r-5: cal(var(--sp-r-4) / 1.618); /*spacing 5 degree below root spacing*/
+	--sp-r-4: cal(var(--sp-r-3) / 1.618); /*spacing 4 degree below root spacing*/
+	--sp-r-3: cal(var(--sp-r-2) / 1.618); /*spacing 3 degree below root spacing*/
+	--sp-r-2: cal(var(--sp-r-1) / 1.618); /*spacing 2 degree below root spacing*/
+	--sp-r-1: cal(var(--sp-r) / 1.618); /*spacing 1 degree below root spacing*/
+	--sp-r: var(--sp-root); /*root spacing*/
+	--sp-r1: 1.618rem; /*root spacing plus 1*/
+	--sp-r2: 2.618rem;
+	--sp-r3: 4.236rem;
+	--sp-r4: 6.854rem;
+	--sp-r5: 11.089rem;
+
+	--sp-0: 0rem;
+	--sp--5: cal(var(--sp-r-4) / 1.618); /*spacing 5 degree below root spacing*/
+	--sp--4: cal(var(--sp-r-3) / 1.618); /*spacing 4 degree below root spacing*/
+	--sp--3: cal(var(--sp-r-2) / 1.618); /*spacing 3 degree below root spacing*/
+	--sp--2: cal(var(--sp-r-1) / 1.618); /*spacing 2 degree below root spacing*/
+	--sp--1: cal(var(--sp-r) / 1.618); /*spacing 1 degree below root spacing*/
+	--sp-r: var(--sp-root); /*root spacing*/
+	--sp-1: 1.618rem; /*root spacing plus 1*/
+	--sp-2: 2.618rem;
+	--sp-3: 4.236rem;
+	--sp-4: 6.854rem;
+	--sp-5: 11.089rem;
+
+	--sp-0: 0rem;
+	--sp-5: cal(var(--sp-r-4) / 1.618); /*spacing 5 degree below root spacing*/
+	--sp-4: cal(var(--sp-r-3) / 1.618); /*spacing 4 degree below root spacing*/
+	--sp-3: cal(var(--sp-r-2) / 1.618); /*spacing 3 degree below root spacing*/
+	--sp-2: cal(var(--sp-r-1) / 1.618); /*spacing 2 degree below root spacing*/
+	--sp-1: cal(var(--sp-r) / 1.618); /*spacing 1 degree below root spacing*/
+	--sp-r: var(--sp-root); /*root spacing*/
+	--sp1: 1.618rem; /*root spacing plus 1*/
+	--sp2: 2.618rem;
+	--sp3: 4.236rem;
+	--sp4: 6.854rem;
+	--sp5: 11.089rem;
+}
