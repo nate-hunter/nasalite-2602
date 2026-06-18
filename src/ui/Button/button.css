@@ -87,3 +87,13 @@
   border-color: var(--color-border);
   cursor: not-allowed;
 }
+
+/* Loading — spinner beside label; inherits disabled interaction */
+.nl-btn.loading .nl-btn-spinner {
+  flex-shrink: 0;
+}
+
+.nl-btn.loading .nl-btn-label {
+  display: inline-flex;
+  align-items: center;
+}
