@@ -94,11 +94,12 @@ export default function MagicLinkLoginForm() {
 								<Button
 									type="submit"
 									variant="primary"
-									disabled={isLoading || !email}
-									aria-busy={isLoading}
+									loading={isLoading}
+									loadingLabel="Sending…"
+									disabled={!email}
 									className={styles.submitFullWidth}
 								>
-									{isLoading ? 'Sending…' : 'Send Magic Link'}
+									Send Magic Link
 								</Button>
 							</div>
 						</form>
