@@ -70,11 +70,11 @@ export function UserLoginForm({ className }: UserLoginFormProps) {
 				<Button
 					type="submit"
 					variant="primary"
-					disabled={pending}
-					aria-busy={pending}
+					loading={pending}
+					loadingLabel="Signing in…"
 					className={styles.submitFullWidth}
 				>
-					{pending ? 'Signing in…' : 'Sign In'}
+					Sign In
 				</Button>
 			</div>
 		</form>

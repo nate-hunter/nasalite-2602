@@ -103,11 +103,11 @@ export function UserRegisterForm({ className }: UserRegisterFormProps) {
 				<Button
 					type="submit"
 					variant="primary"
-					disabled={pending}
-					aria-busy={pending}
+					loading={pending}
+					loadingLabel="Signing up…"
 					className={styles.submitFullWidth}
 				>
-					{pending ? 'Signing up…' : 'Create Account'}
+					Create Account
 				</Button>
 			</div>
 		</form>
