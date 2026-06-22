@@ -1,6 +1,6 @@
 # Lisa + Nate Memories
 
-**A full-stack media platform for a Lisa + Nate's Memories** — authenticated users upload photos and videos; admins curate public galleries; scheduled assignments control what appears on the public site.
+**A full-stack media platform built for the Lisa + Nate Memories project** — authenticated users upload photos and videos; admins curate public galleries; scheduled assignments control what appears on the public site.
 
 Built solo as a portfolio-grade project demonstrating end-to-end product engineering: Next.js App Router, TypeScript, Supabase (Postgres + Auth + Storage + RLS), and production-minded upload pipelines.
 
@@ -9,7 +9,7 @@ Built solo as a portfolio-grade project demonstrating end-to-end product enginee
 | **Stack** | Next.js 16 · React 19 · TypeScript · Supabase · ImageKit |
 | **Scope** | Auth, guest uploads, admin CMS, public gallery surfaces, API routes, declarative Postgres schema + migrations |
 | **Role** | Sole designer and implementer |
-| **Live demo** | *[Add URL when deployed]* |
+| **Live demo** | [lisaplusnate.us](https://www.lisaplusnate.us/) |
 | **Portfolio** | *[Add portfolio / case-study link]* |
 
 ---
@@ -38,7 +38,7 @@ Direct-to-storage uploads keep heavy binaries off the app server:
 
 **HEIC/HEIF** previews route through **ImageKit** temp uploads when the browser cannot decode natively.
 
-### Public wedding gallery
+### Public memories galleries
 
 The `/galleries/wedding-memories` surface loads curated vendor galleries via `GET /api/galleries/wedding-memories`, which joins:
 
@@ -95,7 +95,7 @@ Anonymous read access is enforced in **Postgres RLS**, not only in application c
 
 | Path | Access | Purpose |
 |------|--------|---------|
-| `/` | Public | Landing → wedding memories |
+| `/` | Public | Home; entry point to themed memory galleries |
 | `/galleries/wedding-memories` | Public | Curated photo galleries + vendor films |
 | `/media/upload` | Authenticated | Guest upload flow |
 | `/login` | Public | Magic-link sign-in |
@@ -150,17 +150,17 @@ NEXT_PUBLIC_IMAGE_UNOPTIMIZED=true
 
 Local Supabase API defaults to port **54321** (see `supabase/config.toml`). `next.config.ts` allows local and remote Supabase storage hosts for `next/image`.
 
-### ImageKit CDN (`/LandN`)
+### ImageKit CDN integration
 
 Gallery CDN delivery uses **hosted Supabase** as ImageKit’s S3 origin — not local storage or ngrok.
 
 | Layer | Local dev | ImageKit origins (CDN verify / pre-launch) |
 |-------|-----------|---------------------------------------------|
-| App DB + uploads | `localhost:54321` (`.env.local`) | Hosted project **L+N** (`sxexcquvfdyfatfinxfw`) |
-| ImageKit endpoint | `https://ik.imagekit.io/tig3rm4c/LandN` | Same |
+| App DB + uploads | `localhost:54321` (`.env.local`) | Hosted Supabase project |
+| ImageKit endpoint | `NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT` (`.env.local`) | Same |
 | Origins | N/A locally | 2× S3-compatible → `https://{project_ref}.storage.supabase.co/storage/` |
 
-**Dashboard (ImageKit):** two S3 origins (`app-media-items`, `media-items`), path-style on, attached to `/LandN` (Media Library optional). S3 keys from hosted Dashboard → Storage → S3 — not local CLI keys.
+**Dashboard (ImageKit):** two S3 origins (`app-media-items`, `media-items`), path-style on, attached to configured URL endpoint (Media Library optional). S3 keys from hosted Dashboard → Storage → S3 — not local CLI keys.
 
 **Verify CDN** (requires a file on **hosted** `app-media-items`):
 
@@ -169,12 +169,12 @@ npm run verify:imagekit-landn
 # Or: IMAGEKIT_TEST_FILE_PATH=2026/04/your-file.png npm run verify:imagekit-landn
 ```
 
-Full setup and decisions: `__local/__docs/features/media-files-upload/260604--AGENT1--IMAGEKIT_CDN_PHASE0_PLATFORM_SETUP.md` (Feature #13).
+Full setup and decisions documented in private dev notes.
 
 ---
 
 ## Author
 
-**Nate Hunter** — *[LinkedIn](https://linkedin.com/in/…)* · *[Portfolio](https://…)*
+**Nate Hunter** — *[LinkedIn](https://www.linkedin.com/in/nate-hunter/)* · *[Portfolio](https://www.nate-hunter.com/)*
 
 Private personal project; source shared for interview and portfolio review.
