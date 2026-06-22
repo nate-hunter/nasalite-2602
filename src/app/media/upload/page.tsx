@@ -394,6 +394,7 @@ function MediaUpload({
 	on_switch_to_create_gallery,
 }: MediaUploadProps) {
 	const [editingTitleId, setEditingTitleId] = useState<string | null>(null);
+	const is_uploading = queuedFiles.some((f) => f.uploadStatus === 'uploading');
 
 	useEffect(() => {
 		if (editingTitleId && !queuedFiles.some((q) => q.id === editingTitleId)) {
@@ -592,6 +593,8 @@ function MediaUpload({
 				<div className={styles.uploadActionsPair}>
 					<Button
 						variant="primary"
+						loading={is_uploading}
+						loadingLabel="Uploading…"
 						disabled={readyFileCount === 0}
 						className={styles.uploadActionButton}
 						onClick={onUploadReadyFiles}
@@ -600,7 +603,7 @@ function MediaUpload({
 					</Button>
 					<Button
 						variant="secondary"
-						disabled={queuedFiles.length === 0}
+						disabled={queuedFiles.length === 0 || is_uploading}
 						className={styles.uploadActionButton}
 						onClick={onClearAll}
 					>
