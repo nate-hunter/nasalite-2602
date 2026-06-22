@@ -311,6 +311,7 @@ export default function UploadMediaForm() {
 
 	const ready_file_count = queued_files.filter((f) => f.processStatus === 'ready').length;
 	const total_queued_bytes = queued_files.reduce((sum, item) => sum + item.file.size, 0);
+	const is_uploading = queued_files.some((f) => f.uploadStatus === 'uploading');
 	const can_upload = ready_file_count > 0 && selected_gallery_id !== null;
 
 	return (
@@ -480,6 +481,8 @@ export default function UploadMediaForm() {
 				<div className={styles.uploadActionsPair}>
 					<Button
 						variant="primary"
+						loading={is_uploading}
+						loadingLabel="Uploading…"
 						disabled={!can_upload}
 						className={styles.uploadActionButton}
 						onClick={handle_upload_ready_files}
@@ -488,7 +491,7 @@ export default function UploadMediaForm() {
 					</Button>
 					<Button
 						variant="secondary"
-						disabled={queued_files.length === 0}
+						disabled={queued_files.length === 0 || is_uploading}
 						className={styles.uploadActionButton}
 						onClick={handle_clear_all}
 					>
