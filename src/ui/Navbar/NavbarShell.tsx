@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import styles from './Navbar.module.css';
+import UserDropdownMenu from './UserDropdownMenu';
 
 type NavItem = {
 	href: string;
@@ -83,24 +84,7 @@ export function Navbarshell({
 
 				<div className={styles.auth}>
 					{user?.email ? (
-						<>
-							<Link href="/media/upload" className={styles.uploadMediaBtn}>
-								+ Upload Media
-							</Link>
-							{isuseradmin && (
-								<Link href="/admin" className={styles.signin}>
-									Admin
-								</Link>
-							)}
-							<span className={styles.userEmail} title={user.email}>
-								{user.email}
-							</span>
-							<form action="/api/auth/logout" method="post">
-								<button type="submit" className={styles.logoutBtn}>
-									Logout
-								</button>
-							</form>
-						</>
+						<UserDropdownMenu />
 					) : (
 						<Link href="/login" className={styles.signin}>
 							Sign in
