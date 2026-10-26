@@ -54,8 +54,10 @@
 	letter-spacing: -0.025em;
 	transition: color 0.2s ease;
 	text-transform: uppercase;
+}
 
-	/* background-color: salmon; */
+.brandFull {
+	display: none;
 }
 
 .brand a {
@@ -316,6 +318,14 @@
 @media (min-width: 48rem) {
 	.inner {
 		flex-wrap: nowrap;
+	}
+
+	.brandShort {
+		display: none;
+	}
+
+	.brandFull {
+		display: inline;
 	}
 
 	.menuButton {

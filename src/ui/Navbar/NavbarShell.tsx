@@ -41,8 +41,10 @@ export function Navbarshell({
 		<header className={styles.root}>
 			<div className={styles.inner}>
 				<div className={styles.navBrand}>
-					<Link href="/">L &amp; N</Link>
-					{/* <Link href="/">Lisa &amp; Nate</Link> */}
+					<Link href="/">
+						<span className={styles.brandShort}>L&amp;N</span>
+						<span className={styles.brandFull}>Lisa &amp; Nate</span>
+					</Link>
 				</div>
 
 				<button
