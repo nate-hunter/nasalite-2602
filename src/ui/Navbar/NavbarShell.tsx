@@ -10,7 +10,7 @@ type NavItem = {
 
 const NAV_ITEMS: ReadonlyArray<NavItem> = [
 	{ href: '/', label: 'Home' },
-	{ href: '/galleries', label: 'Galleries' },
+	// { href: '/galleries', label: 'Galleries' },
 ] as const;
 
 function isactive(pathname: string, href: string): boolean {
