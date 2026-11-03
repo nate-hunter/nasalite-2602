@@ -399,10 +399,10 @@
 	}
 
 	.menuButton {
+		order: 2;
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		margin-left: auto;
 	}
 
 	.navLinks {
@@ -411,7 +411,8 @@
 	}
 
 	.auth {
-		order: 2;
+		order: 1;
+		margin-left: auto;
 		min-width: auto;
 	}
 }
