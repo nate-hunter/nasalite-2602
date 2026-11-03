@@ -107,8 +107,14 @@ function UserDropdownOptions({ is_user_admin, onSelect }: UserDropdownOptionsPro
 			) : null}
 
 			{/* Closing here would unmount the form before it submits; the logout redirect replaces the page anyway. */}
-			<form action="/api/auth/logout" method="post" className={styles.dropdownOption}>
-				<button type="submit">Logout</button>
+			<form
+				action="/api/auth/logout"
+				method="post"
+				className={`${styles.dropdownOption} ${styles.dropdownLogout}`}
+			>
+				<button type="submit" className={styles.dropdownLogoutBtn}>
+					Logout
+				</button>
 			</form>
 		</div>
 	);
