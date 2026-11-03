@@ -4,7 +4,6 @@
  */
 
 .wrapper {
-	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	padding: var(--sp-8);

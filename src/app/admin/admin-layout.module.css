@@ -7,7 +7,6 @@
 /* ─── Page shell ─────────────────────────────────────────────────────────── */
 
 .layoutShell {
-	min-height: 100vh;
 	padding: var(--sp-8) var(--layout-gutter);
 }
 
