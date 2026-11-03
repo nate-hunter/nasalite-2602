@@ -10,6 +10,7 @@ import {
 	aegean,
 } from '@/styles/fonts';
 import './globals.css';
+import styles from './layout.module.css';
 import { ImageKitProviderShell } from '@/lib/imagekit/ImageKitProviderShell';
 import Navbar from '@/ui/Navbar/Navbar';
 
@@ -39,7 +40,7 @@ export default function RootLayout({
 			<body className={fontClassNames}>
 				<ImageKitProviderShell>
 					<Navbar />
-					{children}
+					<div className={styles.content}>{children}</div>
 				</ImageKitProviderShell>
 			</body>
 		</html>

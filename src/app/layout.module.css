@@ -1,0 +1,14 @@
+/**
+ * Root layout — the page content area fills the window height left over after the Navbar.
+ * Page roots can use `flex: 1` to fill it (e.g. to center content vertically).
+ */
+
+/**
+ * ??? Can/should this be merged into `page.module.css`?
+ */
+
+.content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}

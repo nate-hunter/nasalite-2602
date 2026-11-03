@@ -25,6 +25,8 @@ export default function MagicLinkLoginForm() {
 		switch (errorType) {
 			case 'invalid-email':
 				return 'Please enter a valid email address.';
+			case 'invalid-link':
+				return 'This sign-in link is invalid or has expired. Please request a new one.';
 			case 'rate-limited':
 				return 'Too many attempts. Please wait a moment before trying again.';
 			case 'unknown':
